@@ -1,0 +1,3 @@
+borrar este file una vez que sea configurado el docker hub de genomixcloud asi como el texto que va en su código:
+
+You can find here the docker images and the reference to the Dockerfiles to build the docker images and the explanation to include them, if you want, in a workflow. We work from an AWS perspective.

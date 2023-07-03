@@ -1,1 +1,1 @@
-# genomixcloud.bioinformatic
+You can find here the reference to the Dockerfiles to build the docker images and the explanation to include them, if you want, in a workflow. We work from an AWS perspective.
