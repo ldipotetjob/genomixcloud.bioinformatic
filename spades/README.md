@@ -43,7 +43,7 @@ genomixcloud/spades spades.py --careful \
 -o data_out
 ```
 
-### Design recomendations  runnning spades on AWS environmemnts:
+### Design Recommendations for implement and running Spades on AWS:
 
 ```shell
 docker run --name spades --rm -ti \
