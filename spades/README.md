@@ -4,8 +4,8 @@ This repository contains docker file to run spades with linux docker images.
 
 ### Building spades docker image
 
-* move to spades root directory(there is the docker file) 
-* docker build -t genomixcloud/spades
+* move to spades root directory(Dockerfile) 
+* docker build -t genomixcloud/spades .
 
 ### Testing spades installation:
 
@@ -45,13 +45,32 @@ genomixcloud/spades spades.py --careful \
 
 ### Design Recommendations for implement and running Spades on AWS:
 
+**AWS S3**
+
+1. The images contain 2 directories (/src, /conf).
+2. Create /src/spades.sh which can include a call to Spades tool and **in** and **out** directories linked with AWS S3. The previous link can be configured in /conf folder
+3. With the previous configuration you can try run the commands below.
+
+```shell 
+docker build -t ${your_own_workspace}/spades .
+```
+
 ```shell
 docker run --name spades --rm -ti \
 -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
 -e AWS_SECRET_ACCESS_KEY="${AAWS_SECRET_ACCESS_KEY}" \
 --mount src="$(pwd)",target=/data,type=bind \
-genomixcloud/spades /src/spades.sh
+${your_own_workspace}/spades /src/spades.sh
 ```
+
+**AWS S3 + AWS ECS + AWS BATCH**
+
+1. Our image contain two directories (/src, /conf).
+2. IN the src directory crate /src/spades.sh, it must include a call to the Spades tool and the **in** and **out** directories linked with AWS S3. You can place the S3 configuration in /conf folder
+3. Push the image to your AWS Account (**AWS ECR**) 
+4. Create an AWS BATCH job that points to the Spades image, previously uploaded  in AWS ECR. 
+
+In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch  
 
 
 
