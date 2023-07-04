@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 ARG SPAdesVer=3.15.3
 
-LABEL dockerfile.version="1"
-LABEL software="genhub/SPAdes"
+LABEL dockerfile.version="0.0.1-b.0"
+LABEL software="genomixcloud/SPAdes"
 LABEL software.version="3.15.3"
 LABEL website="https://github.com/ablab/spades"
 LABEL license="https://github.com/ablab/spades/blob/v3.15.3/assembler/LICENSE"
