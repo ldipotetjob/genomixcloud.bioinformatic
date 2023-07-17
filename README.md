@@ -5,7 +5,7 @@ In this repository, the Dockerfiles to build the Docker images for the following
 1. Spades
 
 
-Every bioinformatic tool contain a section that gives you tips and recommendation about
+Each bioinformatics tool contain a section that gives you tips and recommendation about
 how to address this image to run the tool on AWS environment   
 
 
