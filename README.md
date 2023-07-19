@@ -3,6 +3,7 @@
 In this repository, the Dockerfiles to build the Docker images for the following bioinformatic tools:
 
 1. Spades
+2. FastQC
 
 
 Each bioinformatics tool contain a section that gives you tips and recommendation about
