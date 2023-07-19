@@ -2,8 +2,8 @@
 
 In this repository, the Dockerfiles to build the Docker images for the following bioinformatic tools:
 
-1. Spades
-2. FastQC
+1. [Spades](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/spades)
+2. [FastQC](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/fastqc)
 
 
 Each bioinformatics tool contain a section that gives you tips and recommendation about
