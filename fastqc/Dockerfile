@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ARG FASTqcVer="0.11.9"
 
-LABEL software="genhub/FASTqc"
+LABEL software="genomixcloud/FASTqc"
 LABEL software.version="0.0.1-b.0"
 LABEL website="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
 LABEL license="https://github.com/s-andrews/FastQC/blob/master/LICENSE.txt"
