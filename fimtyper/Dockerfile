@@ -11,13 +11,9 @@ RUN apt-get update && apt-get install -y build-essential git
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
  wget \
- ca-certificates \
- libmoo-perl \
- liblist-moreutils-perl \
- libjson-perl \
  gzip \
+ libjson-perl \
  perl \
- vim \
  curl \
  file \
  unzip \
@@ -32,7 +28,7 @@ RUN wget -P /usr/src/ https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip &
     unzip -d /usr/src/  /usr/src/awscli-exe-linux-x86_64.zip && \
     rm /usr/src/awscli-exe-linux-x86_64.zip && \
     /usr/src/aws/install && \
-    mkdir /data && mkdir /src && mkdir /conf && mkdir -p /opt/prinseq
+    mkdir /src && mkdir /conf
 
 # installing fimtyper
 RUN cd /usr/local && \
@@ -40,9 +36,9 @@ RUN cd /usr/local && \
 	cd /usr/local/fimtyper && \
 	git clone https://bitbucket.org/genomicepidemiology/fimtyper_db.git
 
+COPY ./src/* /usr/local/fimtyper
 
-## COPY ./conf/* /conf/
-## COPY ./src/* /src/
+RUN /usr/local/fimtyper/tmp_brew.sh
 
 ENV PATH="${PATH}:/usr/local/fimtyper"
 
