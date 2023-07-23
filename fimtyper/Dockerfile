@@ -1,11 +1,10 @@
 FROM ubuntu:20.04
 
-ARG FimTyper="0.11.9"
 
 LABEL software="genomixcloud/FimTyper"
-LABEL software.version="0.0.1-b.0"
+LABEL software.version="0.0.1-a.0"
 LABEL website="https://bitbucket.org/genomicepidemiology/fimtyper/"
-LABEL license=""
+LABEL license="https://bitbucket.org/genomicepidemiology/fimtyper/src/master/README.md#license"
 
 RUN apt-get update && apt-get install -y build-essential git
 
