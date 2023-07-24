@@ -6,7 +6,7 @@ Genomix Cloud is a  platform designed to provide researchers, biologists, geneti
 
 ---
 
-[Genomix Cloud Platform](https://genomixcloud.com/) | [Docker image repository](https://hub.docker.com/u/genomixcloud) 
+[Genomix Cloud Platform](https://genomixcloud.com/) | [Docker images repository](https://hub.docker.com/u/genomixcloud) 
 
 ---
 
