@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 # ref: https://hub.docker.com/_/ubuntu/
+
 # tag ubuntu:18.04 @see Locales
 RUN apt-get update && apt-get install -y wget groff locales && rm -rf /var/lib/apt/lists/* \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
@@ -20,9 +21,6 @@ RUN conda env create --quiet -f /src/environment.yaml
 ## RUN source activate bakta_env
 RUN echo "source activate bakta_env" > ~/.bashrc
 ENV PATH /opt/conda/envs/bakta_env/bin:$PATH
-
 COPY ./src/* /src/
-
 WORKDIR /data
-
 CMD ["/bin/bash", "-c"]
