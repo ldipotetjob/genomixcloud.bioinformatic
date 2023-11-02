@@ -17,3 +17,4 @@ The repository hosts the plain images of the bioinformatic tools that are part o
 1. [SPAdes](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/spades)
 2. [FastQC](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/fastqc)
 3. [FimTyper](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/fimtyper)
+4. [Bakta](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/bakta)
