@@ -17,8 +17,8 @@ docker run --name bakta --rm -ti genomixcloud/bakta /src/bakta.sh --version
 
 ```shell
 #wget 
-wget https://sra-download.ncbi.nlm.nih.gov/traces/wgs03/wgs_aux/AG/QU/AGQU01/AGQU01.1.fsa_nt.gz -O forwardPairedReads_1.fastq.gz
-
+wget https://sra-download.ncbi.nlm.nih.gov/traces/wgs03/wgs_aux/AG/QU/AGQU01/AGQU01.1.fsa_nt.gz -O contig.gz
+gunzip contig.gz
 ```
 
 ```shell
@@ -49,7 +49,7 @@ ref: [bakta database download](https://github.com/oschwengers/bakta/blob/main/RE
 
 ### Running from local with test data 
 
-1. Move where you download test data  
+1. Change to directory where you downloaded test data or where you stored your data.  
 2. Create the output directory(**data_out** in our example) 
 
 ```shell
