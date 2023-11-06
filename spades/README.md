@@ -47,6 +47,21 @@ genomixcloud/spades spades.py --careful \
 
 **AWS S3**
 
+**Mandatory**
+
+In Dockerfile file:
+
+Under comment **# install awscli** add the following code:
+
+```shell
+RUN wget -P /usr/src/ https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
+unzip -d /usr/src/  /usr/src/awscli-exe-linux-x86_64.zip && \
+rm /usr/src/awscli-exe-linux-x86_64.zip && \
+/usr/src/aws/install
+```
+
+Other considerations:
+
 1. The image contains 2 directories (/src, /conf).
 2. Create /src/spades.sh which can include a call to Spades tool and **in** and **out** directories linked with AWS S3. The previous link can be configured in /conf folder.
 3. With the previous configuration you can try run the commands below.
