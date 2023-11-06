@@ -62,6 +62,19 @@ docker run --name bakta --rm -ti genomixcloud/bakta \
 ### Design Recommendations for implement and running Bakta on AWS:
 
 **AWS S3**
+
+**Mandatory**
+
+In environment.yaml file:
+
+Under **depedencies** add the AWS cli dependency:
+
+```
+- awscli
+```
+
+Other considerations:
+
 1. The image contains 2 directories (/src, /conf).
 2. The /src/bakta.sh can include a call to bakta tool and **in** and **out** directories linked with AWS S3. The previous link can be configured in /conf folder
 3. With the previous configuration you can try run the commands below.
@@ -71,11 +84,9 @@ docker run --name bakta --rm -ti genomixcloud/bakta \
 
 **AWS S3 + AWS ECS + AWS EFS + AWS BATCH**
 
-1. Our image contain two directories (/src, /conf).
-2. In the src directory create /src/bakta.sh, it must include a call to the bakta tool and the **in** and **out** directories linked with AWS S3. You can place the S3 configuration in /conf folder
-3. In /src/bakta.sh, bakta_db path can be linked to a Volume on AWS EFS. The previous link can be configured in /conf folder.
-3. Push the image to your AWS Account (**AWS ECR**)
-4. Create an AWS BATCH job(must be linked to a Volume on AWS EFS) that points to the Bakta image, previously uploaded in AWS ECR.
+1. In /src/bakta.sh, bakta_db path can be linked to a Volume on AWS EFS. The previous link can be configured in /conf folder.
+2. Push the image to your AWS Account (**AWS ECR**)
+3. Create an AWS BATCH job(must be linked to a Volume on AWS EFS) that points to the Bakta image, previously uploaded in AWS ECR.
 
 In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch, AWS EFS  
 
