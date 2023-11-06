@@ -23,11 +23,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # apt-get update && apt-get install -y curl
 
 # install awscli
-RUN wget -P /usr/src/ https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
-    unzip -d /usr/src/  /usr/src/awscli-exe-linux-x86_64.zip && \
-    rm /usr/src/awscli-exe-linux-x86_64.zip && \
-    /usr/src/aws/install && \
-    mkdir /src && mkdir /conf
 
 # installing fimtyper
 RUN cd /usr/local && \
