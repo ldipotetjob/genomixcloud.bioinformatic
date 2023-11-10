@@ -60,11 +60,11 @@ rm /usr/src/awscli-exe-linux-x86_64.zip && \
 /usr/src/aws/install
 ```
 
-Other considerations:
+Considerations:
 
 1. The image contains 2 directories (/src, /conf).
 2. The /src/fastqc.sh can include a call to Fastqc tool and **in** and **out** directories linked with AWS S3. The previous link can be configured in /conf folder
-3. With the previous configuration you can try run the commands below.
+3. With the previous configuration you can try run the commands below(to rebuild the image).
 
 ```shell 
 docker build -t ${your_own_workspace}/fastqc .

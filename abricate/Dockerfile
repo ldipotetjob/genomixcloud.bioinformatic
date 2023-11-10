@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   wget && \
   apt-get autoclean && rm -rf /var/lib/apt/lists/*
 
+# install awscli
+
 # get any2fasta
 RUN cd /usr/local/bin && \
   wget https://raw.githubusercontent.com/tseemann/any2fasta/master/any2fasta && \

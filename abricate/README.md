@@ -38,18 +38,54 @@ gunzip -k < contig.gz > contig.fasta
 2. Create the output directory(**data_out** in our example)
 
 ```shell
-docker run --name bakta --rm -ti genomixcloud/abricate \
+docker run --name abricate --rm -ti \
 --mount src="$(pwd)",target=/data,type=bind \
-abricate contig.fasta > $data_out/out.tab   
+ genomixcloud/abricate abricate contig.fasta > $data_out/out.tab   
+
+```
+
+### Design Recommendations for implement and running Fastqc on AWS:
+
+**AWS S3**
+
+**Mandatory**
+
+In Dockerfile file:
+
+Under comment **# install awscli** add the following code:
+
+```shell
+RUN wget -P /usr/src/ https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
+unzip -d /usr/src/  /usr/src/awscli-exe-linux-x86_64.zip && \
+rm /usr/src/awscli-exe-linux-x86_64.zip && \
+/usr/src/aws/install
+```
+
+Considerations:
+
+1. The image contains 2 directories (/src, /conf).
+2. The /src/abricate.sh can include a call to Fastqc tool and **in** and **out** directories linked with AWS S3. The previous link can be configured in /conf folder
+3. With the previous configuration you can try run the commands below(to rebuild the image).
+
+```shell 
+docker build -t ${your_own_workspace}/abricate .
+```
+
+```shell
+docker run --name abricate --rm -ti \
+-e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
+-e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
+--mount src="$(pwd)",target=/data,type=bind \
+${your_own_workspace}/abricate abricate contig.fasta > $data_out/out.tab
 
 ```
 
 **AWS S3 + AWS ECS + AWS BATCH**
 
-1. Our image contains two directories (/src, /conf).
-2. In the src directory create /src/spades.sh, it must include a call to the Abricate tool and the **in** and **out** directories linked with AWS S3. You can place the S3 configuration and any parameter needed for the tool in the /conf folder
-3. Push the image to your AWS Account (**AWS ECR**)
-4. Create an AWS BATCH job that points to the Spades image, previously uploaded in AWS ECR.
+Other considerations:
+
+1. Push the image to your AWS Account (**AWS ECR**)
+2. Create an AWS BATCH job that points to the Spades image, previously uploaded in AWS ECR.
 
 In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch
 
