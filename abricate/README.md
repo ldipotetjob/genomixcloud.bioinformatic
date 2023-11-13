@@ -44,7 +44,7 @@ docker run --name abricate --rm -ti \
 
 ```
 
-### Design Recommendations for implement and running Fastqc on AWS:
+### Design Recommendations for implement and running Abricate on AWS:
 
 **AWS S3**
 
