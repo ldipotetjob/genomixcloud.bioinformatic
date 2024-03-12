@@ -43,12 +43,6 @@ genomixcloud/fastp:my_version fastp \
 -O data_out/out_rawreads_2.fastq.gz
 ```
 
-docker run --name fastqc --rm -ti --mount src="$(pwd)",target=/data,type=bind \
-genomixcloud/fastqc:my_version fastqc rawreads_1.fastq.gz rawreads_2.fastq.gz -t 4 -o ./data_out
-
-
-
-
 ### Design Recommendations for implement and running FastP on AWS:
 
 **AWS S3**
