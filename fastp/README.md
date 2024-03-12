@@ -5,7 +5,7 @@ This repository contains docker file to run fastp with linux docker image.
 ### Building fastp docker image
 
 * move to fastp root directory(Dockerfile)
-* docker build -t genomixcloud/fastp .
+* docker build -t genomixcloud/fastp:my_version .
 
 ### Testing fastp installation:
 
@@ -18,15 +18,15 @@ docker run --name fastp --rm -ti genomixcloud/fastp fastp --version
 ```shell
 #wget 
 
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz -O forwardPairedReads_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz -O reversePairedReads_2.fastq.gz 
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz -O rawreads_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz -O rawreads_2.fastq.gz 
 ```
 
 ```shell
 #curl osx
 
-curl -o forwardPairedReads_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz 
-curl -o reversePairedReads_2.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz 
+curl -o rawreads_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz 
+curl -o rawreads_2.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz 
 ```
 
 ### Running from local with test data
@@ -35,14 +35,19 @@ curl -o reversePairedReads_2.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/
 2. Create the output directory(**data_out** in our example)
 
 ```shell
-docker run --name fastp --rm -ti \
---mount src="$(pwd)",target=/data,type=bind \
-genomixcloud/fastp fastp \
--i forwardPairedReads_1.fastq.gz \
--I reversePairedReads_2.fastq.gz \
--o data_out/out_forwardPairedReads_1.fastq.gz \
--O data_out/out_reversePairedReads_2.fastq.gz
+docker run --name fastp --rm -ti --mount src="$(pwd)",target=/data,type=bind \
+genomixcloud/fastp:my_version fastp \
+-i rawreads_1.fastq.gz \
+-I rawreads_2.fastq.gz \
+-o data_out/out_rawreads_1.fastq.gz \
+-O data_out/out_rawreads_2.fastq.gz
 ```
+
+docker run --name fastqc --rm -ti --mount src="$(pwd)",target=/data,type=bind \
+genomixcloud/fastqc:my_version fastqc rawreads_1.fastq.gz rawreads_2.fastq.gz -t 4 -o ./data_out
+
+
+
 
 ### Design Recommendations for implement and running FastP on AWS:
 
