@@ -71,7 +71,7 @@ docker run --name fastqc --rm -ti \
 -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
 -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
 --mount src="$(pwd)",target=/data,type=bind \
-${your_own_workspace}/fastqc /src/fastqc.sh s3://fastq_forward_uri s3://fastq_reverse_uri
+${your_own_workspace}/fastqc /src/fastqc.sh s3://fastq_forward_uri s3://fastq_reverse_uri -t $threads
 ```
 
 **AWS S3 + AWS ECS + AWS BATCH**
