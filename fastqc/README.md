@@ -31,16 +31,12 @@ curl -o rawreads_2.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR333
 
 ### Running from local with test data 
 
-1. Move where you download test data  
+1. Move where you download test **data**  
 2. Create the output directory(**data_out** in our example) 
 
 ```shell
-docker run --name fastqc --rm -ti \
---mount src="$(pwd)",target=/data,type=bind \
-genomixcloud/fastqc fastqc \
-forwardPairedReads_1.fastq.gz \
-reversePairedReads_2.fastq.gz \
--o data_out
+docker run --name fastqc --rm -ti --mount src="$(pwd)",target=/data,type=bind \
+genomixcloud/fastqc:my_version fastqc rawreads_1.fastq.gz rawreads_2.fastq.gz -t 4 -o ./data_out
 ```
 
 ### Design Recommendations for implement and running Fastqc on AWS:
@@ -85,7 +81,7 @@ Other considerations:
 1. Push the image to your AWS Account (**AWS ECR**) 
 2. Create an AWS BATCH job that points to the Fastqc image, previously uploaded in AWS ECR. 
 
-In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch  
+In this implementation, we just pointed to the core aspect. Be aware that at first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch  
 
 ref:
 * [Fastqc Software](https://raw.githubusercontent.com/s-andrews/FastQC/master/INSTALL.txt)
