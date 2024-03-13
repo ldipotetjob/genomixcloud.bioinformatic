@@ -2,3 +2,5 @@
 .DS_Store
 # JetBrains IDE
 .idea/
+logs
+/logs/*.log
