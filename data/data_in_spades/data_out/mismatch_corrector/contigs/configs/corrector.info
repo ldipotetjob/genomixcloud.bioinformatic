@@ -1,7 +1,0 @@
-"bwa": "/SPAdes-3.15.5-Linux/bin/spades-bwa"
-"dataset": "/data/data_out/input_dataset.yaml"
-"log_filename": "log.properties"
-"max_nthreads": !!int "16"
-"output_dir": "/data/data_out/mismatch_corrector/contigs"
-"strategy": "mapped_squared"
-"work_dir": "/data/data_out/tmp/corrector_i0y8bZ"
