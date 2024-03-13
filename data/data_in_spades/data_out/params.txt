@@ -1,0 +1,37 @@
+Command line: /SPAdes-3.15.5-Linux/bin/spades.py	--careful	-1	/data/trimmed_reads_1.fastq.gz	-2	/data/trimmed_reads_2.fastq.gz	-o	/data/data_out	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 2.7.17
+  OS: Linux-5.15.49-linuxkit-pr-x86_64-with-Ubuntu-18.04-bionic
+
+Output dir: /data/data_out
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/data/trimmed_reads_1.fastq.gz']
+      right reads: ['/data/trimmed_reads_2.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned ON
+  MismatchCorrector will be used
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /data/data_out/tmp
+  Threads: 16
+  Memory limit (in Gb): 7
+

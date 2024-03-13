@@ -5,7 +5,7 @@ This repository contains docker file to run spades with linux docker image.
 ### Building spades docker image
 
 * move to spades root directory(Dockerfile) 
-* docker build -t genomixcloud/spades .
+* docker build -t genomixcloud/spades:my_version .
 
 ### Testing spades installation:
 
@@ -13,34 +13,18 @@ This repository contains docker file to run spades with linux docker image.
 docker run --name spades-test --rm -ti genomixcloud/spades spades.py --isolate --test
 ```
 
-### Download test data 
-
-```shell
-#wget 
-
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz -O forwardPairedReads_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz -O reversePairedReads_2.fastq.gz 
-```
-
-```shell
-#curl osx
-
-curl -o forwardPairedReads_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_1.fastq.gz 
-curl -o reversePairedReads_2.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR333/004/ERR3335404/ERR3335404_2.fastq.gz 
-```
-
 ### Running from local with test data 
 
-1. Move where you download test data  
+1. Move to the data input directory data/data_in_spades  
 2. Create the output directory(**data_out** in our example) 
 
 ```shell
 docker run --name spades --rm -ti \
 --mount src="$(pwd)",target=/data,type=bind \
-genomixcloud/spades spades.py --careful \
--1 forwardPairedReads_1.fastq.gz \
--2 reversePairedReads_2.fastq.gz \
--o data_out
+genomixcloud/spades:my_version spades.py --careful \
+-1 trimmed_reads_1.fastq.gz \
+-2 trimmed_reads_2.fastq.gz \
+-o ./data_out
 ```
 
 ### Design recommendations for implement and running Spades on AWS:
