@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y python \
 # install awscli
 
 # install SPAdes binary; make /data
-RUN wget http://cab.spbu.ru/files/release${SPAdesVer}/SPAdes-${SPAdesVer}-Linux.tar.gz && \
+RUN wget https://github.com/ablab/spades/releases/download/v${SPAdesVer}/SPAdes-${SPAdesVer}-Linux.tar.gz && \
   tar -xzf SPAdes-${SPAdesVer}-Linux.tar.gz && \
   rm -r SPAdes-${SPAdesVer}-Linux.tar.gz && \
   mkdir /data
