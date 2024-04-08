@@ -8,18 +8,22 @@ This repository contains docker file to run checkm with linux docker image.
 * docker build -t genomixcloud/checkm:my_version .
 
 ### Testing checkm installation:
-* Download checkm db to **checkm_db** directory 
-* run the following docker statement:  
+1. Download checkm db to **checkm_db** directory 
+2. Move to   the parent directory(**data in our example, see the tree above**)
+
+```md
+root_project
+├── data
+│   ├── checkm_db
+```
+
+3. run the following docker statement:
 
 ```shell
 docker run --name checkm --rm -ti \
 --mount src="$(pwd)",target=/data,type=bind \
 genomixcloud/checkm:latest checkm taxonomy_wf species "Escherichia coli" \
 /data/checkm_db/test_data/ /data/checkm_test_results
-```
-
-```shell
-docker run --name checkm --rm -ti genomixcloud/checkm:latest checkm -h
 ```
 
 ### Running from local with test data
