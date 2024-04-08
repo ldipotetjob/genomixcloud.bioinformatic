@@ -69,5 +69,5 @@ In this implementation, we just pointed to the core aspect. Be aware that a firs
 
 ref:
 * [Docker run command](https://docs.docker.com/engine/reference/commandline/run/)
-* [Spades Software](https://github.com/Ecogenomics/CheckM)
-* [Spades Manual](https://ecogenomics.github.io/CheckM/) 
+* [CheckM Software](https://github.com/Ecogenomics/CheckM)
+* [CheckM Manual](https://ecogenomics.github.io/CheckM/) 
