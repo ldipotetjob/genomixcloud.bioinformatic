@@ -15,7 +15,7 @@ docker run --name spades-test --rm -ti genomixcloud/spades spades.py --isolate -
 
 ### Running from local with test data 
 
-1. Move to the data input directory data/data_in_spades  
+1. Move to the data input directory data/data_in_trimmed  
 2. Create the output directory(**data_out** in our example) 
 
 ```shell
