@@ -29,16 +29,15 @@ docker run --name kraken2-build --rm -ti genomixcloud/kraken2:latest  kraken2-bu
 ```md
 root_project
 ├── data
-│   ├── data_fasta
-│   │    └── contigs.fasta
+│   ├── kraken_db 
 │   ├── data_out
-│       └── taxonomic_identification
+│   │   └── taxonomic_identification
 │   ├── data_in_trimmed
 │       ├── trimmed_reads_1.fastq.gz
 │       ├── trimmed_reads_2.fastq.gz
 ```
 
-5. Run kraken 2 tool:
+5. Run kraken2 tool:
 
 A remarkable aspect: **--memory-mapping** attribute is **mandatory** when running in this configuration
 
@@ -92,12 +91,12 @@ s3://fastq_forward_uri s3://fastq_reverse_uri --db /data/kraken_db \
 3. Push the image to your AWS Account (**AWS ECR**)
 4. Create an AWS BATCH job that points to the Spades image, previously uploaded in AWS ECR.
 
-A remarkable aspects: 
+Remarkable aspects: 
 
 1. We don't recommend [--memory-mapping in production environment](https://github.com/ldipotetjob/kraken2/blob/kraken2aws_profilingfromv2.1.3/docs/Kraken2paramsonAWS/memory-mapping.md#memory-mapping-option).  
 2. [How to create Kraken2 Standard(v2.1.3) DB in AWS](https://github.com/ldipotetjob/kraken2/tree/kraken2aws_profilingfromv2.1.3/docs/awsStandardDB#readme)
 3. [Profiling info](https://github.com/ldipotetjob/kraken2/tree/kraken2aws_profilingfromv2.1.3/docs/awsStandardDB/profilingpngs)
-4. We recommend AWS EFS to store in production Kraken2 Standard(v2.1.3) DB.
+4. We recommend AWS EFS for storing the Kraken2 Standard (v2.1.3) database in production.
 
 In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch
 
