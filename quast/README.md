@@ -43,7 +43,7 @@ genomixcloud/quast:latest quast.py \
 -o /data/data_out
 ```
 
-### Design recommendations for implement and running Spades on AWS:
+### Design recommendations for implement and running quast on AWS:
 
 **AWS S3**
 
