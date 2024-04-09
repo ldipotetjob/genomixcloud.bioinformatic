@@ -80,7 +80,7 @@ genomixcloud/pilon:latest pilon ---genome /data/data_fasta/contigs.fasta \
 --outdir /data/data_out/ --output assembly.polish --threads 8 --minqual 30 --nostrays
 ```
 
-### Design recommendations for implement and running Spades on AWS:
+### Design recommendations for implement and running Pilon on AWS:
 
 **AWS S3**
 
@@ -125,7 +125,7 @@ ${your_own_workspace}/pilon /src/pilon.sh s3://fasta_uri s3://fastq_forward_uri 
 1. Our image contains two directories (/src, /conf).
 2. In the src directory create /src/pilon.sh, it must include a call to the following tools: bwa-mem2, samtools and pilon tool(check the order above), the **in** and **out** directories are linked with AWS S3. You can place the S3 configuration and any parameter needed for the tool in the /conf folder
 3. Push the image to your AWS Account (**AWS ECR**)
-4. Create an AWS BATCH job that points to the Spades image, previously uploaded in AWS ECR.
+4. Create an AWS BATCH job that points to the Pilon image, previously uploaded in AWS ECR.
 
 In this implementation, we just pointed to the core aspect. Be aware that a first glance, you will need to configure AWS services like AWS Networking, AWS IAM, AWS S3, AWS Batch
 
