@@ -51,7 +51,7 @@ Other considerations:
 3. With the previous configuration you can try run the commands below.
 
 ```shell 
-docker build -t ${your_own_workspace}/spades:your_version_tag . .
+docker build -t ${your_own_workspace}/spades:your_version_tag .
 ```
 
 ```shell
