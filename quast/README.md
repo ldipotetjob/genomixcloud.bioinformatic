@@ -43,7 +43,7 @@ genomixcloud/quast:latest quast.py \
 -o /data/data_out
 ```
 
-### Design recommendations for implement and running Spades on AWS:
+### Design recommendations for implement and running quast on AWS:
 
 **AWS S3**
 
@@ -71,7 +71,7 @@ docker build --build-arg DEBIAN_FRONTEND=noninteractive -t ${your_own_workspace}
 ```
 
 ```shell
-docker run --name spades --rm -ti \
+docker run --name quast --rm -ti \
 -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
 -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
 --mount src="$(pwd)",target=/data,type=bind \
