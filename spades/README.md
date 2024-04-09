@@ -15,7 +15,7 @@ docker run --name spades-test --rm -ti genomixcloud/spades spades.py --isolate -
 
 ### Running from local with test data 
 
-1. Move to the data input directory data/data_in_spades  
+1. Move to the data input directory data/data_in_trimmed  
 2. Create the output directory(**data_out** in our example) 
 
 ```shell
@@ -31,7 +31,7 @@ genomixcloud/spades:my_version spades.py --careful \
 
 **AWS S3**
 
-**Mandatory**
+****Getting aws cli****
 
 In Dockerfile file:
 
@@ -51,7 +51,7 @@ Other considerations:
 3. With the previous configuration you can try run the commands below.
 
 ```shell 
-docker build -t ${your_own_workspace}/spades .
+docker build -t ${your_own_workspace}/spades:your_version_tag . .
 ```
 
 ```shell
