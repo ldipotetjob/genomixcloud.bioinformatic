@@ -17,7 +17,7 @@ root_project
 │   ├── checkm_db
 ```
 
-3. run the following docker statement:
+3. Run the checkM tool:
 
 ```shell
 docker run --name checkm --rm -ti \
