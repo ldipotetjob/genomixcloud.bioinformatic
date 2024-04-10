@@ -43,6 +43,8 @@ Remarkable aspects:
 
 1. RAM=16Gb: **diamond execution failed! diamond-error-code=-11**, successful execution: **RAM=24Gb**  
 
+[error reference](https://github.com/oschwengers/platon/issues/45#issuecomment-1983151977)
+
 ### Design recommendations for implement and running platon on AWS:
 
 **AWS S3**
