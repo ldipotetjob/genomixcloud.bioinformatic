@@ -18,7 +18,7 @@ docker run --name platon --rm -ti genomixcloud/platon:latest platon --version
 1. [Download Platon Data Base](https://github.com/oschwengers/platon?tab=readme-ov-file#database-download)
 2. Move to the data input directory in this repo **data**, which contain fasta files.
 3. Create the output directory(**data_out** in our example)
-4. Move to the parent directory(**data in our example, see the tree above**)
+4. Move to the parent directory(**data in our example, see the tree below**)
 
 ```md
 root_project

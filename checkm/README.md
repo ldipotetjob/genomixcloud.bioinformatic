@@ -9,7 +9,7 @@ This repository contains docker file to run checkm with linux docker image.
 
 ### Testing checkm installation:
 1. Download checkm db to **checkm_db** directory 
-2. Move to the parent directory(**data in our example, see the tree above**)
+2. Move to the parent directory(**data in our example, see the tree below**)
 
 ```md
 root_project

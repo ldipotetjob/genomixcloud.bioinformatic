@@ -23,7 +23,7 @@ docker run --name samtools --rm -ti genomixcloud/pilon:latest samtools --help
 
 1. Move to the data input directory in this repo **data**, which contain trimmed sample reads and fasta file
 2. Create the output directory(**data_out** in our example)
-3. Move to the parent directory(**data in our example, see the tree above**)
+3. Move to the parent directory(**data in our example, see the tree below**)
 
 ```md
 root_project

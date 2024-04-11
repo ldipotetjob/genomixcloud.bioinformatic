@@ -24,7 +24,7 @@ docker run --name kraken2-build --rm -ti genomixcloud/kraken2:latest  kraken2-bu
 1. Download kraken2 db db to **kraken_db** directory (for local test: [download mini-krakenDB](https://genome-idx.s3.amazonaws.com/kraken/minikraken2_v2_8GB_201904.tgz) )
 2. Move to the data input directory in this repo **data**, which contain trimmed sample reads and kraken db
 3. **Create** the output directory(**data_out/taxonomic_identification** in our example)
-4. Move to the parent directory(**data in our example, see the tree above**)
+4. Move to the parent directory(**data in our example, see the tree below**)
 
 ```md
 root_project
