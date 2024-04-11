@@ -95,5 +95,4 @@ In this implementation, we just pointed to the core aspect. Be aware that a firs
 
 ref:
 * [Docker run command](https://docs.docker.com/engine/reference/commandline/run/)
-* [Quast Software](https://github.com/ablab/mlst)
-* [Quast Manual](https://mlst.sourceforge.net/docs/manual.html)
+* [Mlst Software](https://github.com/tseemann/mlst)
