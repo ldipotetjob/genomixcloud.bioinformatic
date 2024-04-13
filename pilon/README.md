@@ -97,15 +97,10 @@ rm /usr/src/awscli-exe-linux-x86_64.zip && \
 /usr/src/aws/install
 ```
 
-docker run --name bwa-mem2 --rm -ti genomixcloud/pilon:latest bwa-mem2 version
-docker run --name bwa-mem2 and samtools --rm -ti genomixcloud/pilon:latest samtools --help
-
-
-
 Other considerations:
 
 1. The image contains 2 directories (/src, /conf).
-2. Create /src/pilon.sh w, it must include a call to the following tools: bwa-mem2, samtools and pilon tool(check the order above), the **in** and **out** directories are linked with AWS S3. You can place the S3 configuration and any parameter needed for the tool in the /conf folder.
+2. Create /src/pilon.sh, it must include a call to the following tools: bwa-mem2, samtools and pilon tool(check the order above), the **in** and **out** directories are linked with AWS S3. You can place the S3 configuration and any parameter needed for the tool in the /conf folder.
 3. With the previous configuration you can try run the commands below.
 
 ```shell 
@@ -132,4 +127,4 @@ In this implementation, we just pointed to the core aspect. Be aware that a firs
 ref:
 * [Docker run command](https://docs.docker.com/engine/reference/commandline/run/)
 * [Pilon Software](https://github.com/broadinstitute/pilon)
-* [Pilon Manual](https://github.com/broadinstitute/pilon/wiki) 
+* [Pilon Manual](https://github.com/broadinstitute/pilon/wiki)
