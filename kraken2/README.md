@@ -102,5 +102,5 @@ In this implementation, we just pointed to the core aspect. Be aware that a firs
 
 ref:
 * [Docker run command](https://docs.docker.com/engine/reference/commandline/run/)
-* [kraken Software](ttps://github.com/DerrickWood/kraken2)
+* [kraken Software](https://github.com/DerrickWood/kraken2)
 * [kraken Manual](https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown) 
