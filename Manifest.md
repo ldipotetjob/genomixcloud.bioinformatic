@@ -48,6 +48,6 @@ Genomixcloud docker images: <https://hub.docker.com/u/genomixcloud>
 
 9\. Distribution:
 
-- Github
+- [Github](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main)
 
-- Docker Hub
+- [Docker Hub](https://hub.docker.com/u/genomixcloud)
