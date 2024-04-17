@@ -21,3 +21,5 @@ The repository hosts the plain images of the bioinformatic tools that are part o
 5. [Abricate](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/abricate)
 6. [FastP](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/fastp)
 7. [Kraken2](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/kraken2)
+8. [Pilon](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/pilon)
+9. [Mlst](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/mlst)
