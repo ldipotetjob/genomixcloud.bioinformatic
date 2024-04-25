@@ -2,11 +2,11 @@
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ldipotetjob/genomixcloud.bioinformatic?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/genomixcloud?style=social)
 
-Genomix Cloud is a  platform designed to provide researchers, biologists, geneticists, and other professionals in the field of genomics with a powerful suite of bioinformatics tools in the Cloud to analyze and interpret genomic data.
+[Genomix Cloud](https://genomixcloud.com/) is a  platform designed to provide researchers, biologists, geneticists, and other professionals in the field of genomics with a powerful suite of bioinformatics tools in the Cloud to analyze and interpret genomic data. 
 
 ---
 
-[Genomix Cloud Platform](https://genomixcloud.com/) | [Docker images repository](https://hub.docker.com/u/genomixcloud) 
+[Genomix Cloud Docker images repository](https://hub.docker.com/u/genomixcloud) 
 
 ---
 
