@@ -29,4 +29,4 @@ The repository hosts the plain images of the bioinformatic tools that are part o
 
 <br></br>
 
-![Alt text](assets/microbial_genome_pipeline.jpg)
+![Alt text](assets/microbial_genome_pipeline.jpg 'Microbial Genome Pipeline')
