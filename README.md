@@ -10,9 +10,9 @@
 
 ---
 
-Please note that this repository is currently being developed and includes the source code for our basic images. Here, you will find instructions on building the Docker images used in our various workflows. Additionally, we provide suggestions on enhancing performance and automation within the AWS ecosystem.
+Please note that this repository is continuously evolving and includes the source code for our basic images. You will find in this repository instructions on building the Docker images used in our various workflows. Additionally, we provide suggestions on enhancing performance and automation within the AWS ecosystem.
 
-The repository hosts the plain images of the bioinformatic tools that are part of the Genomixcloud platform. These images serve as the foundation for our suite of bioinformatic tools and can be utilized to support various genomic analysis tasks.
+The repository hosts the plain images of the bioinformatic tools that are part of the Genomixcloud platform. These images form the foundation for our suite of bioinformatic tools and can help support various genomic analysis tasks.
 
 1. [Abricate](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/abricate)
 2. [Bakta](https://github.com/ldipotetjob/genomixcloud.bioinformatic/tree/main/bakta)
