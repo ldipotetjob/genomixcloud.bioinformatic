@@ -51,10 +51,6 @@ RUN wget https://github.com/tseemann/barrnap/archive/${BARRNAP_VER}.tar.gz && \
     cd barrnap-${BARRNAP_VER} && \
     make test
 
-# to fix error when running Prokka 1.14.5: '"uniq" is not exported by the List::Util module'
-# error introduced while updating dockerfile from prokka 1.14.0 to 1.14.5
-# RUN cpanm List::Util
-
 # download prokka and make /data
 RUN wget https://github.com/tseemann/prokka/archive/v${PROKKA_VER}.tar.gz && \
     tar -xzf v${PROKKA_VER}.tar.gz && \

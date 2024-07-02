@@ -67,6 +67,9 @@ docker run --name prokka --rm -ti \
 ${your_own_workspace}/prokka /src/prokka.sh s3://data_in_fasta_uri s3://data_out_uri
 ```
 
+Remarkable aspects:
+1. If you face any problem with tbl2asn(you shouldnt) you can find the appropriate tbl2asn release in [binaries folder](../binaries/README_tbl2asn.md) 
+
 **AWS S3 + AWS ECS + AWS BATCH**
 
 1. Our image contains two directories (/src, /conf).
