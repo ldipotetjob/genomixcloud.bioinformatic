@@ -51,7 +51,7 @@ RUN wget https://github.com/tseemann/barrnap/archive/${BARRNAP_VER}.tar.gz && \
     cd barrnap-${BARRNAP_VER} && \
     make test
 
-# download prokka and make /data
+# download prokka
 RUN wget https://github.com/tseemann/prokka/archive/v${PROKKA_VER}.tar.gz && \
     tar -xzf v${PROKKA_VER}.tar.gz && \
     rm -rf v${PROKKA_VER}.tar.gz && \
