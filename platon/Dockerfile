@@ -16,7 +16,11 @@ RUN conda config --add channels defaults && \
     conda config --add channels bioconda && \
     conda config --add channels conda-forge
 
-RUN conda install -y platon=$DATA_OUT
+RUN conda tos accept --override-channels --channel defaults \
+ && conda tos accept --override-channels --channel bioconda \
+ && conda tos accept --override-channels --channel conda-forge
+
+RUN conda install -y platon=${PLATON_VER}
 
 # install awscli
 

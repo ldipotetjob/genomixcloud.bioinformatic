@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 # FROM ubuntu:20.04
-
+ARG CHECKM_VER="1.2.4"
 ARG PPLACER_VER="v1.1.alpha19"
 LABEL license="https://github.com/Ecogenomics/CheckM/blob/master/LICENSE"
 

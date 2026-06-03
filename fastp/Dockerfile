@@ -1,10 +1,10 @@
 FROM ubuntu:18.04
 
-ARG FAStpVer=0.23.4
+ARG FAStpVer=1.0.1
 
 LABEL dockerfile.version="1"
 LABEL software="genhub/FAStp"
-LABEL software.version="0.23.1"
+LABEL software.version="1.0.1"
 LABEL website="https://github.com/OpenGene/fastp"
 LABEL license="https://github.com/OpenGene/fastp/blob/master/LICENSE"
 

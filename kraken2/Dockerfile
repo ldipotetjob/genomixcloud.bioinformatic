@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ARG K2pVer="2.1.3"
+ARG K2pVer="2.1.6"
 
 # install dependencies
 RUN apt-get update && \
